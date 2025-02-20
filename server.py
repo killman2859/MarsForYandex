@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -21,6 +21,29 @@ def promotion():
 @app.route('/image_mars')
 def image_mars():
     return '''<html><title>Привет, Марс!</title><h1>Жди нас, Марс!</h1><img src="static/Images/mars.png" alt="Mars surface" width=500 height=500><br><br>Вот она красная планета!</html>'''
+
+
+@app.route('/promotion_image')
+def promotion_image():
+    return '''<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Колонизация</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+<h1 class="welcome_text">Жди нас марс!</h1>
+<img src="static/Images/mars.png" alt="Mars surface" width=500 height=500>
+<div class="p-3 mb-2 bg-primary text-white">Человечество вырастает из детства.</div>
+<div class="p-3 mb-2 bg-secondary text-white">Человечеству мала одна планета.</div>
+<div class="p-3 mb-2 bg-danger text-white">Мы сделаем безжизнеными пока планеты.</div>
+<div class="p-3 mb-2 bg-warning text-white">И начнём с Марса!</div>
+<div class="p-3 mb-2 bg-info text-white">Присоединяйся!</divЮ
+</body>
+
+</html>'''
 
 
 if __name__ == '__main__':
