@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def start():
-    return "Миссия Колонизация Марса"
+    return render_template('index.html', username="killman2859", title="Заготовка")
 
 
 @app.route('/index')
