@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h1>{{ title2 }}</h1>
+
+        {% if title2 == "Инженерные тренажеры" %}
+            <img src="/static/Images/shatle.jpg" alt="">
+        {% else %}
+            <img src="/static/Images/mars.png" alt="">
+        {% endif %}
+
+    </div>
+{% endblock %}

@@ -8,6 +8,15 @@ def start():
     return render_template('index.html', username="killman2859", title="Заготовка")
 
 
+@app.route('/training/<prof>')
+def training(prof):
+    if "инженер" in prof or "строитель" in prof:
+        return render_template('training.html', username="killman2859", title2="Инженерные тренажеры",
+                               title="Миссия марс")
+    return render_template('training.html', username="killman2859",
+                           title2="Научные симуляторы", title="Миссия марс")
+
+
 @app.route('/index')
 def index():
     return "И на Марсе будут яблони цвести!"
