@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -59,6 +59,17 @@ def promotion_image():
 </body>
 
 </html>'''
+
+
+@app.route('/registration', methods=['POST', 'GET'])
+def registration():
+    if request.method == 'GET':
+        return render_template('reg.html')
+    else:
+        email = request.form.get('email')
+        school_class = request.form.get('class')
+        about = request.form.get('about')
+        return render_template('auto_answer.html', email=email, school_class=school_class, about=about)
 
 
 if __name__ == '__main__':
